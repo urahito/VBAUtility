@@ -124,6 +124,14 @@ Public Function FindSheet(ByRef sheetName As String, ByRef sheetObj As Worksheet
     End If
 End Function
 
+Public Sub SetValueWithFormat(ByRef rng As Range, ByVal val As Variant, ByVal formatStr As String)
+    DoEvents
+    With rng
+        .NumberFormat = formatStr
+        .Value = val
+    End With
+End Sub
+
 Public Sub SetValueAsStr(ByRef rng As Range, ByVal val As Variant, ByVal withoutQuot As Boolean)
     DoEvents
     With rng
